@@ -33,7 +33,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
-"""
+
 
 
 class SnippetSerializer(serializers.HyperlinkedModelSerializer):
@@ -44,6 +44,19 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
         model = Snippet
         fields = ['url', 'id', 'highlight', 'owner',
                   'title', 'code', 'linenos', 'language', 'style']
+
+
+
+"""
+from rest_framework import serializers
+
+from snippets.models import Snippet
+
+
+class SnippetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Snippet
+        fields = ['id', 'title', 'code', 'linenos', 'language', 'style']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
