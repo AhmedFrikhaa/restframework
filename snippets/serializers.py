@@ -56,7 +56,7 @@ from snippets.models import Snippet
 class SnippetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Snippet
-        fields = ['id', 'title', 'code', 'linenos', 'language', 'style']
+        fields = ['url','id', 'title', 'code', 'linenos', 'language', 'style','highlight','owner']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
